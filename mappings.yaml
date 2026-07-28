@@ -1,0 +1,53 @@
+# Mapping table: vcpkg port -> apt package(s) on Ubuntu/Debian.
+# Extend this table as you run into ports you actually use.
+# Contributions welcome — see CONTRIBUTING.md.
+
+mappings:
+  curl:
+    apt: [libcurl4-openssl-dev]
+  openssl:
+    apt: [libssl-dev]
+  libssh2:
+    apt: [libssh2-1-dev]
+  nlohmann-json:
+    apt: [nlohmann-json3-dev]
+  zlib:
+    apt: [zlib1g-dev]
+  fmt:
+    apt: [libfmt-dev]
+  spdlog:
+    apt: [libspdlog-dev]
+  sqlite3:
+    apt: [libsqlite3-dev]
+  boost-asio:
+    apt: [libboost-dev, libboost-system-dev]
+  boost-filesystem:
+    apt: [libboost-filesystem-dev]
+  gtest:
+    apt: [libgtest-dev]
+  catch2:
+    apt: [catch2]
+  protobuf:
+    apt: [libprotobuf-dev, protobuf-compiler]
+  grpc:
+    apt: [libgrpc++-dev, protobuf-compiler-grpc]
+  libpq:
+    apt: [libpq-dev]
+  yaml-cpp:
+    apt: [libyaml-cpp-dev]
+  tinyxml2:
+    apt: [libtinyxml2-dev]
+  libjpeg-turbo:
+    apt: [libjpeg-turbo8-dev]
+  libpng:
+    apt: [libpng-dev]
+
+# System packages always required to build C++ with CMake, regardless of
+# which vcpkg ports are used.
+base_packages:
+  - build-essential
+  - cmake
+  - ninja-build
+  - pkg-config
+  - git
+  - ca-certificates
